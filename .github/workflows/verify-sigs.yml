@@ -30,6 +30,6 @@ jobs:
       - name: Verify signatures
         run: |
           python --version
-          match=python verify_sigs.py
+          match=$(python verify_sigs.py)
           echo "Verification succeed: ${match}"
     
