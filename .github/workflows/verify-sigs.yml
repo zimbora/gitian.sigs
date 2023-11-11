@@ -31,6 +31,8 @@ jobs:
         run: |
           python --version
           match=$(python verify_sigs.py)
-          echo "Verification succeed: ${match}"
-          if [ ! succeed ]; then exit 1; fi
+          if [ $match == "False" ]; then
+            echo "!! Error: Hashes do not match"
+            exit 1
+          fi
           
