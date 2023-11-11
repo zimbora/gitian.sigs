@@ -32,4 +32,5 @@ jobs:
           python --version
           match=$(python verify_sigs.py)
           echo "Verification succeed: ${match}"
-    
+          if [ ! succeed ]; then: exit 1; fi
+          
